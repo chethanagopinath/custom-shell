@@ -11,12 +11,11 @@ def execute_command(command_input):
         # Communicate with the subprocess (send input, receive output)
         stdout, stderr = process.communicate()
 
-        # Print the output
         print(stdout)
 
-        # Check for errors
         if process.returncode != 0:
             print("Error:", stderr)
+    
     except Exception as e:
         print("Unexpected error:", e)
 
@@ -33,10 +32,6 @@ def startup_shell():
         # split with | for bigger commands
 
         execute_command(command_input)
-
-         
-
-        
 
     return
 
