@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import subprocess
+import os
 
 def execute_command(command_input):
     command_input_args = command_input.split(" ")
@@ -31,7 +32,17 @@ def startup_shell():
 
         # split with | for bigger commands
 
-        execute_command(command_input)
+        # handle cd differently
+        if "cd" in command_input:
+            input_directory = command_input[3:]
+            try:
+                os.chdir(input_directory)
+            except FileNotFoundError:
+                print(f"Directory not found: {input_directory}")
+
+        # handle other commands differently
+        else:
+            execute_command(command_input)
 
     return
 
