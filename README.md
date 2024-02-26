@@ -6,7 +6,10 @@ From wikipedia,
 In this case, we are building a CLI to run commands. Implementing this will be useful in understanding more of the workings of a shell (like zsh).
 
 ### Functionality implemented
-
+- Running commands infinitely until user hits `exit` 
+- Executing commands without arguments (eg., `pwd`)
+- Executing commands with arguments (eg., `ls -la`)
+- Exeucting `cd` with arguments (eg., `cd <dir-name`, `cd ..`>)
 
 ### Demo
 
