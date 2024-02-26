@@ -4,17 +4,6 @@ import subprocess
 def execute_command(command_input):
     command_input_args = command_input.split(" ")
 
-    print(command_input_args)
-
-    # try:
-    #     result = subprocess.run(command_input_args, shell=True, capture_output=True, text=True, check=True)
-        
-    #     print(result.stdout)
-    # except subprocess.CalledProcessError as e:
-    #     print(e.stderr)
-    # except Exception as e:
-    #     print("Unexpected error:", e)
-
     try:
         # Open a subprocess with the command
         process = subprocess.Popen(command_input_args, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
